@@ -6,16 +6,23 @@ document.addEventListener('DOMContentLoaded',function(event) {
     const container = document.getElementById('container')
 
     function generateHTMLForMsgObj(msgObj) {
+        // convert this into document.createElement
+        // p with additional attributes
+        // create p tag
+        // use methods on the p tag to create id and data attributes
+        // if the elment is `el` `el.id = ....` `el.dataset.msgMsg = ...`
         return `<p id='msg-id-${msgObj.id}' data-msg-msg='${msgObj.message}' data-msg-name='${msgObj.real_name}'>
                     ${msgObj.real_name} says ${msgObj.message}
                 </p>`
     }
 
     function appendMsgToDom(msgObj) {
+        //update this function to use the appendChild function
         container.innerHTML += generateHTMLForMsgObj(msgObj)
     }
 
     function prependMsgToDom(msgObj) {
+        //update this function to use the prepend function
         container.innerHTML = `${generateHTMLForMsgObj(msgObj)}${container.innerHTML}`
     }
 
